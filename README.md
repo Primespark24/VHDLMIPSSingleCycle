@@ -258,6 +258,8 @@ Start the Vivado simulator test bench then proceed as follows:
    
     In a complex system, if you don’t know what answer the system should produce, you won’t be able to debug the system. Begin by predicting what will happen for each instruction when running the program.  This means that you should follow any branches or jumps in your prediction! 
 
+    
+
     Here are some hints to help you. You will need to study the architecture diagram and VHDL code in order to trace what happens: 
     * ```branch``` is asserted (1) when the instruction is a ```branch (beq)``` instruction. 
     *  ```aluout``` is the output of the ALU at each cycle.  
@@ -276,19 +278,19 @@ Start the Vivado simulator test bench then proceed as follows:
     | ---- | ----- | ----- | -------- | ------ | -------- | -------- | -------- | -------- | -----| --------- | -------- | -------- |
     |  0 ns| 1     | 0     | 00000000 | 0      | 20020005 | 00000000 | 00000005 | 00000005 | 0    | UUUUUUUU  | 0        | UUUUUUUU |
     | 20 ns| 1     | 0     | 00000000 | 0      | 20020005 | 00000000 | 00000005 | 00000005 | 0    | 00000005  | 0        | UUUUUUUU |
-    | 40 ns| 0     | 0     | 00000004 | 0      | 20070003 | 00000000 | 00000003 | 00000003 | 0    | UUUUUUUU  | 0        | UUUUUUUU |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
+    | 40 ns| 0     | 0     | 00000004 | 0      | 20070003 | 00000000 | 00000003 | 00000003 | 0    | 00000003  | 0        | UUUUUUUU |
+    | 60 ns| 0     | 0     | 00000008 | 0      | 2003000c | 00000000 | 0000000c | 0000000c | 0    | 0000000c  | 0        | UUUUUUUU |
+    | 80 ns| 0     | 0     | 0000000c | 0      | 00e22025 | 00000000 | 0000000c | 00000007 | 0    | 00000007  | 0        | UUUUUUUU |
+    |100 ns| 0     | 0     | 00000010 | 0      | 00642824 | 0000000c | 00000007 | 00000004 | 0    | 00000004  | 0        | UUUUUUUU |
+    |120 ns| 0     | 0     | 00000014 | 0      | 00a42820 | 00000004 | 00000007 | 00000013 | 0    | 00000013  | 0        | UUUUUUUU |
+    |140 ns| 0     | 0     | 00000018 | 1      | 10a70008 | 00000013 | 00000003 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |160 ns| 0     | 0     | 0000001c | 0      | 0064302a | 0000000c | 00000007 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |180 ns| 0     | 0     | 00000020 | 1      | 10c00001 | 00000000 | 00000000 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |200 ns| 0     | 1     | 00000028 | 0      | 00e2302a | 00000003 | 00000005 | 00000001 | 0    | 00000001  | 0        | UUUUUUUU |
+    |220 ns| 0     | 0     | 0000002c | 0      | 00c53820 | 00000001 | 00000013 | 00000014 | 0    | 00000014  | 0        | UUUUUUUU |
+    |240 ns| 0     | 0     | 00000030 | 0      | 00e23822 | 00000014 | 00000005 | 0000000f | 0    | 0000000f  | 0        | UUUUUUUU |
+    |260 ns| 0     | 0     | 00000034 | 1      | 0800000f | 00000000 | 00000000 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |280 ns| 0     | 1     | 0000003c | 0      | ac470047 | 00000014 | 00000000 | 00000007 | 0    | 00000007  | 0        | UUUUUUUU |
     |300 ns| 0     | 0     | 00000040 | 0      | 00000000 | 00000000 | 00000000 | 00000000 | 1    | 00000007  | 0        | UUUUUUUU |
 
 
@@ -328,14 +330,19 @@ For this assignment must have the exact signals in the order described below.
 For multi-bit signal values, make sure the signal trace shows these as hexadecimal values. They must also be readable to be awarded full credit! 
 
     A.	Screen snip and insert a waveform trace from  0 ns to 60 ns here:
+          ![0 to 60ns](./60ns.png)
 
     B.	Screen snip and insert a waveform trace from  60 ns to 120 ns here:
+          ![60 to 120ns](./120ns.png)
 
     C.	Screen snip and insert a waveform trace from 120 ns to 180 ns here:
+          ![120 to 180ns](./180ns.png)
 
     D.	Screen snip and insert a waveform trace from 180 ns to 240 ns here:
+          ![180 to 240ns](./240ns.png)
 
     E.	Screen snip and insert a waveform trace from 240 ns to 300 ns here:
+          ![240 to 300ns](./300ns.png)
 
 3.  Use the signals from the screen snips (or from the simulator) to complete the follow table 
       
@@ -344,18 +351,18 @@ For multi-bit signal values, make sure the signal trace shows these as hexadecim
     |  0 ns| 1     | 0     | 00000000 | 0      | 20020005 | 00000000 | 00000005 | 00000005 | 0    | UUUUUUUU  | 0        | UUUUUUUU |
     | 20 ns| 1     | 0     | 00000000 | 0      | 20020005 | 00000000 | 00000005 | 00000005 | 0    | 00000005  | 0        | UUUUUUUU |
     | 40 ns| 0     | 0     | 00000004 | 0      | 20070003 | 00000000 | 00000003 | 00000003 | 0    | UUUUUUUU  | 0        | UUUUUUUU |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
-    |      |       |       |          |        |          |          |          |          |      |           |          |          |
+    | 60 ns| 0     | 0     | 00000008 | 0      | 2003000c | 00000000 | 0000000c | 0000000c | 0    | UUUUUUUU  | 0        | UUUUUUUU |
+    | 80 ns| 0     | 0     | 0000000c | 0      | 00e22025 | 00000003 | 00000005 | 00000007 | 0    | 00000005  | 0        | UUUUUUUU |
+    |100 ns| 0     | 0     | 00000010 | 0      | 00642824 | 0000000c | 00000007 | 00000004 | 0    | 00000007  | 0        | UUUUUUUU |
+    |120 ns| 0     | 0     | 00000014 | 0      | 00a42820 | 00000004 | 00000007 | 0000000b | 0    | 00000007  | 0        | UUUUUUUU |
+    |140 ns| 0     | 0     | 00000018 | 1      | 10a70008 | 0000000b | 00000003 | 00000008 | 0    | 00000003  | 0        | UUUUUUUU |
+    |160 ns| 0     | 0     | 0000001c | 0      | 0064302a | 0000000c | 00000007 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |180 ns| 0     | 1     | 00000020 | 1      | 10c00001 | 00000000 | 00000000 | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |200 ns| 0     | 1     | 00000028 | 0      | 00e2302a | 00000003 | 00000005 | 00000001 | 0    | 00000005  | 0        | UUUUUUUU |
+    |220 ns| 0     | 0     | 0000002c | 0      | 00c53820 | 00000001 | 0000000b | 0000000c | 0    | 0000000b  | 0        | UUUUUUUU |
+    |240 ns| 0     | 0     | 00000030 | 0      | 00e23822 | 0000000c | 00000005 | 00000007 | 0    | 00000005  | 0        | UUUUUUUU |
+    |260 ns| 0     | X     | 00000034 | X      | 0800000f | 00000000 | 0000000f | 00000000 | 1    | 00000000  | 0        | UUUUUUUU |
+    |280 ns| 0     | 1     | 0000003c | 0      | ac470047 | 00000005 | 00000047 | 0000004c | 0    | 00000007  | 1        | UUUUUUUU |
     |300 ns| 0     | 0     | 00000040 | 0      | 00000000 | 00000000 | 00000000 | 00000000 | 1    | 00000007  | 0        | UUUUUUUU |
 
 
@@ -364,6 +371,11 @@ For multi-bit signal values, make sure the signal trace shows these as hexadecim
 ```
 
 In this area discuss if your predictions matched reality. Did you predict correctly? What mistakes did you make (if any)?
+
+The scra was nice to do as it was primarily just adding hex numbers. 
+WriteData was very hard to figure out as I couldnt figure out how to compute them. So I made predictions based on what I thought could be right or close to the answer. 
+The PCSRC was complicated as the extra ns high was tricky to find and actually determine what was wrong. 
+I still have problems decideing when 'x' as a value is relevant as I cant seem to wrap my head around it as I like the definitive values more so I tend to only use a 1 or 0. I also nailed the INSTR and ZERO were easy enough to sort out as well.
 
 
 ```
@@ -381,8 +393,24 @@ This folder has a MIPS processor wired to the FPGA's 4, 7-segment displays.  The
 The actual program will eventully run out of instructions. If you wait long enough, it will cycle through all the 00000000 instructions and wrap back around and start at instruction 0 again.
 
 1. Load the bistream for the current program into the fpga.  Run the program and record the HEX codes here:
+  2002
+  2007
+  2003
+  00E2
+  0064
+  00A4
+  10A7
+  0064
+  10C0
+  00E2
+  00C5
+  00E2
+  0800
+  AC47
+  0000
 
 2. Do the instruction HEX codes match those in the simulation? Why or Why not?
+  They didnt exactly match and Im wondering if it is to do with how the code runs through memory and how the simulation decides to adress things in a vritual environment, but some of the codes did match so there was something working at least similarly
 
 3. Increse the clock speed by a factor of 4. To do this, identify the clock divider VHDL hardware that generates the clock signal for the mips processor. Change the output signal from this clock so that it quadruples the clock speed from its current value. 
    
@@ -392,8 +420,7 @@ The actual program will eventully run out of instructions. If you wait long enou
 
     ```vhdl
 
-    -- Put your VHDL code that you modified here
-
+     clk <= clk_div(24); -- use a lower bit for a faster clock
 
     ```
 

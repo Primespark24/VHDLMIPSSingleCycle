@@ -330,19 +330,19 @@ For this assignment must have the exact signals in the order described below.
 For multi-bit signal values, make sure the signal trace shows these as hexadecimal values. They must also be readable to be awarded full credit! 
 
     A.	Screen snip and insert a waveform trace from  0 ns to 60 ns here:
-          ![0 to 60ns](img/60ns.png)
+          ![0 to 60ns](img/60ns.PNG)
 
     B.	Screen snip and insert a waveform trace from  60 ns to 120 ns here:
-          ![60 to 120ns](img/120ns.png)
+          ![60 to 120ns](img/120ns.PNG)
 
     C.	Screen snip and insert a waveform trace from 120 ns to 180 ns here:
-          ![120 to 180ns](img/180ns.png)
+          ![120 to 180ns](img/180ns.PNG)
 
     D.	Screen snip and insert a waveform trace from 180 ns to 240 ns here:
-          ![180 to 240ns](img/240ns.png)
+          ![180 to 240ns](img/240ns.PNG)
 
     E.	Screen snip and insert a waveform trace from 240 ns to 300 ns here:
-          ![240 to 300ns](img/300ns.png)
+          ![240 to 300ns](img/300ns.PNG)
 
 3.  Use the signals from the screen snips (or from the simulator) to complete the follow table 
       
